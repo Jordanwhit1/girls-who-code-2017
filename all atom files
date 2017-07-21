@@ -1,0 +1,284 @@
+Groceries = ["Eggs", "Bacon", "Sausage", "Grits"]
+Errands = ["Pick up dry cleaning", "Go get package"]
+Things_to_do = [Groceries, Errands]
+
+print(Things_to_dofrom random import *
+
+
+#Create the list of words you want to choose from.
+word_list = []
+
+#Generates a random integer.
+x = randint(0, len(word_list)-1)[0][2])
+
+start = '''
+After a long day at work you come home and you have never been more tired.
+You eat and then decide to shower. Tody was the day you cowashed your hair.
+Now it's midnight anf you just want to go to sleep.
+Should You put on a bonnet or go to sleep?
+'''
+
+
+print(start)
+done = False
+
+while not done:
+    print("Type 'sleep' to go to sleep or 'bonnet' to put on bonnet.")
+    user_input = input()
+    if user_input == "sleep":
+        print("You decide to go sleep and when you wake up your hair is dry and very brittle. You can go to work late and moisturize it or make it to work on time.")
+        done = True
+    elif user_input == "bonnet":
+        print("You choose to put on a bonnet and woke up in the morning with a fresh twist out looking so good! Also you make it to work on time.") # finished the story writing what happens
+        done = True
+    else:
+        print("Wrong option")
+        done = False
+
+
+
+print("you have finished the story. I'll add more soon!")
+
+from turtle import *
+import math
+
+# Name your Turtle.
+#fredrick= turtle()
+weston= Turtle()
+
+# Set Up your screen and starting position.
+setup(500,300)
+x_pos = 0
+y_pos = 0
+#fredrick.setposition(x_pos, y_pos)
+#fredrick.pendown()
+#fredrick.speed()
+#square_sides = 4
+#for count in range(square_sides):
+#    fredrick.right(90)
+#    fredrick.forward(30)
+weston.setposition(x_pos, y_pos)
+weston.pendown()
+weston.speed()
+triangle_sides = 3
+for count in range(triangle_sides):
+    weston.right(120)
+    weston.forward(50)
+exitonclick()
+
+print("skipping loop")
+pineapple = 0
+for counter in range(6):
+    pineapple = pineapple +1
+    print (pineapple)
+
+class User:
+    # Define the fields and methods for your object here.
+    def __init__ (self, newUsername, newUserID):
+        self.username = newUsername
+        self.userId = newUserID
+        self.friends = []
+
+    def getUserName(self):
+        return self.username
+
+    def getUserID(self):
+        return self.userId
+
+    def getFriends(self):
+        return self.friends
+
+    def addFriends(self, friendID):
+        self.friends.append(friendID)
+
+
+
+
+class Network:
+    # Define the fields and methods for your object here.
+    def __init__(self):
+        self.users = []
+
+    def numUsers(self):
+        return len(self.users)
+
+    def addUsers(self, username):
+        userId=len(self.users)
+        self.users.append(User(username,userId))
+
+    def getUserID(self, username):
+        for user in self.users:
+            if username == user.getUserName():
+               userID = user.getUserID()
+        return userID
+
+    def addConnection(self, user1, user2):
+        user1_id = self.getUserID(user1)
+        user2_id = self.getUserID(user2)
+
+        user1 = self.users[user1_id]
+        user2 = self.users[user2_id]
+
+        self.users[user2_id].addFriends(user1_id)
+        self.users[user1_id].addFriends(user2_id)
+
+    def printUsers(self):
+        print("THis is the Network")
+        for user in self.users:
+            print("\tUser {}: {}".format(user.getUserID(), user.getUserName()))
+
+    def printConnections(self, username):
+        user =self.users[self.getUserID(username)]
+        connections = user.getFriends()
+        print("\t{}'s connections".format(user.getUserName()))
+        for friendID in connections:
+            friend = self.users[friendID]
+            print("\t{}".format(friend.getUserName()))
+
+
+
+
+
+def main():
+    # Define the program flow for your user interface here.
+    mynetwork = Network()
+    done = False
+    while not done:
+
+        action = input("\nWhat would you like to do? Add user(u), Add a connection(c), Print User List(p), Exit(e), Print Connections (pc)")
+
+        if action == "u":
+            username = input("what username?")
+            mynetwork.addUsers(username)
+        elif action == "c":
+            if mynetwork.numUsers()<2:
+                print("ERROR. You have no friends.")
+                continue
+            else:
+                user1 = input("First User?")
+                user2 = input("Second User?")
+            mynetwork.addConnection(user1, user2)
+        elif action == "pc":
+            user = input("Which user?")
+            mynetwork.printConnections(user)
+        elif action == "p":
+            mynetwork.printUsers()
+        elif action == "e":
+            print("Bye then.")
+            done = True
+        else:
+            print("Oh no baby what is you doin?")
+# Runs your program.
+if __name__ == '__main__':
+    main()
+
+pants = ["white jeans", "black jeans", "army green dress"];
+shirts = ["white","black", "tee","crop","pink"]
+shoes = ["sandle", "sneakers", "heels", "flats"]
+print "(pants)"
+
+class vehicle:
+    def __init__(self, newName):
+        self.name = newName
+        self.wheels = 0
+        self.ignition = False
+        self.passengers = []
+
+    def num_wheels(self, newWheels):
+        self.wheels = newWheels
+
+    def ignitions(self, key):
+        self.ignition = key
+
+    def add_passenger(self, newPassenger):
+        self.passengers.append(newPassenger)
+
+def main():
+    myCar = vehicle("CLS")
+    myCar.num_wheels(4)
+    myCar.add_passenger("Jordan")
+    print(myCar.name, myCar.wheels, myCar.passengers)
+
+if __name__ == '__main__':
+    main()
+
+wordList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+"N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y","Z"]
+first = 0
+last = len(wordList)-1
+midpoint = (last// 2)
+item = "G"
+print("First", first, "Last", last, "Midpoint", midpoint)
+
+while (first <= last):
+    if wordList[midpoint]==item:
+        print("First", first, "Last", last, "Midpoint", midpoint)
+        print ("Yes!")
+        break
+    if item<wordList[midpoint]:
+        print("First", first, "Last", last, "Midpoint", midpoint)
+        print ("left")
+        last = midpoint - 1
+        midpoint = (first + last) // 2
+    if item>wordList[midpoint]:
+        print("First", first, "Last", last, "Midpoint", midpoint)
+        print ("right")
+        first = midpoint + 1
+        midpoint = (first + last) // 2
+
+#alpabet
+"A"
+"B"
+
+from PIL import Image
+
+# RGB values for recoloring.
+darkBlue = (0, 51, 76) #if <182 darkBlue
+red = (217, 26, 33) #182-364 red
+lightBlue = (112, 150, 158) #364-546 lightBlue
+yellow = (252, 227, 166) #>546 yellow
+
+# Import image.
+my_image = Image.open("schmoke.jpg") #change IMAGENAME to the path on your computer to the image you're using
+image_list = my_image.getdata() #each pixel is represented in the form (red value, green value, blue value, transparency). You don't need the fourth value.
+image_list = list(image_list) #Turns the sequence above into a list. The list can be iterated through in a loop.
+
+recolored = [] #list that will hold the pixel data for the new image.
+
+#YOUR CODE to loop through the original list of pixels and build a new list based on intensity should go here.
+for pixel in image_list
+    intensity= pixel[0] + pixel[1] + pixel[2]
+    if intensity < 182:
+        recolored.append(darkBlue)
+    elif intensity>= 182 and intensity<364:
+        recolored.append(red)
+    elif intensity>= 354 and intensity<546:
+        recolored.append(lightBlue)
+    elif intensity>= 546
+        recolored.append(yellow)
+
+
+
+
+# Create a new image using the recolored list. Display and save the image.
+new_image = Image.new("RGB", my_image.size) #Creates a new image that will be the same size as the original image.
+new_image.putdata(recolored) #Adds the data from the recolored list to the image.
+new_image.show() #show the new image on the screen
+new_image.save("recolored.jpg", "jpeg") #save the new image as "recolored.jpg"
+
+Groceries = ["Eggs", "Bacon", "Sausage", "Grits"]
+
+from random import *
+
+
+#Create the list of words you want to choose from.
+Sides = ["Rice", "Refried Beans", "Black beans"]
+Main_Course = ["Echiladas", "Beef burrito", "Chicken burrito"]
+Drinks = ["Water", "Horchata", "Tea", "Soda"]
+  #Generates a random integer.
+x = randint(0, len(Sides)-1)
+y = randint(0, len(Main_Course)-1)
+z = randint(0, len(Drinks)-1)
+print(Sides[x])
+print(Main_Course[y])
+print(Drinks[z])
